@@ -26,18 +26,23 @@ class TennisGame1:
     def _score(self):
         # MEMO 良い名前がつけられなかったため
         result = ""
-        for i in range(1, 3):
-            if i == 1:
-                temp_score = self.p1points
-            else:
-                result += "-"
-                temp_score = self.p2points
-            result += {
-                0: "Love",
-                1: "Fifteen",
-                2: "Thirty",
-                3: "Forty",
-            }[temp_score]
+
+        temp_score = self.p1points
+        result += {
+            0: "Love",
+            1: "Fifteen",
+            2: "Thirty",
+            3: "Forty",
+        }[temp_score]
+
+        result += "-"
+        temp_score = self.p2points
+        result += {
+            0: "Love",
+            1: "Fifteen",
+            2: "Thirty",
+            3: "Forty",
+        }[temp_score]
         return result
 
     def score_when_deuce(self):
