@@ -26,24 +26,20 @@ class TennisGame1:
     def _score(self):
         # MEMO 良い名前がつけられなかったため
         result = ""
-
-        temp_score = self.p1points
-        result += {
-            0: "Love",
-            1: "Fifteen",
-            2: "Thirty",
-            3: "Forty",
-        }[temp_score]
+        result += self.point_to_score(self.p1points)
 
         result += "-"
-        temp_score = self.p2points
-        result += {
+        result += self.point_to_score(self.p2points)
+        return result
+
+    @staticmethod
+    def point_to_score(a_player_point):
+        return {
             0: "Love",
             1: "Fifteen",
             2: "Thirty",
             3: "Forty",
-        }[temp_score]
-        return result
+        }[a_player_point]
 
     def score_when_deuce(self):
         minus_result = self.p1points - self.p2points
