@@ -19,7 +19,7 @@ class TennisGame1:
             return self._score_when_same_point()
 
         if self.p1points >= 4 or self.p2points >= 4:
-            return self._score_when_deuce()
+            return self._score_when_over_deuce()
 
         return self._score_when_different_point()
 
@@ -40,8 +40,7 @@ class TennisGame1:
             3: "Forty",
         }[a_player_point]
 
-    def _score_when_deuce(self):
-        # FIXME: deuce以外の時もあるため、名前が不適切である
+    def _score_when_over_deuce(self):
         minus_result = self.p1points - self.p2points
         if minus_result == 1:
             result = f"Advantage {self.player1_name}"
