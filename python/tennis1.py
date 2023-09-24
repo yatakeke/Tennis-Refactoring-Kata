@@ -16,15 +16,14 @@ class TennisGame1:
 
     def score(self):
         if self.p1points == self.p2points:
-            return self.score_when_same_point()
+            return self._score_when_same_point()
 
         if self.p1points >= 4 or self.p2points >= 4:
-            return self.score_when_deuce()
+            return self._score_when_deuce()
 
-        return self._score()
+        return self._score_when_different_point()
 
-    def _score(self):
-        # MEMO 良い名前がつけられなかったため
+    def _score_when_different_point(self):
         result = ""
         result += self.point_to_score(self.p1points)
 
@@ -41,7 +40,7 @@ class TennisGame1:
             3: "Forty",
         }[a_player_point]
 
-    def score_when_deuce(self):
+    def _score_when_deuce(self):
         minus_result = self.p1points - self.p2points
         if minus_result == 1:
             result = "Advantage player1"
@@ -53,7 +52,7 @@ class TennisGame1:
             result = "Win for player2"
         return result
 
-    def score_when_same_point(self):
+    def _score_when_same_point(self):
         result = {
             0: "Love-All",
             1: "Fifteen-All",
