@@ -41,13 +41,14 @@ class TennisGame1:
         }[a_player_point]
 
     def _score_when_deuce(self):
+        # FIXME: deuce以外の時もあるため、名前が不適切である
         minus_result = self.p1points - self.p2points
         if minus_result == 1:
-            result = "Advantage player1"
+            result = f"Advantage player1"
         elif minus_result == -1:
             result = "Advantage player2"
         elif minus_result >= 2:
-            result = "Win for player1"
+            result = f"Win for {self.player1_name}"
         else:
             result = "Win for player2"
         return result
