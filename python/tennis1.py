@@ -15,18 +15,17 @@ class TennisGame1:
             self.p2points += 1
 
     def score(self):
-        result = ""
-        temp_score = 0
         if self.p1points == self.p2points:
             return self.score_when_same_point()
 
         if self.p1points >= 4 or self.p2points >= 4:
             return self.score_when_deuce()
 
-        return self._score(result)
+        return self._score()
 
-    def _score(self, result):
+    def _score(self):
         # MEMO 良い名前がつけられなかったため
+        result = ""
         for i in range(1, 3):
             if i == 1:
                 temp_score = self.p1points
