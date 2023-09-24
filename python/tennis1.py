@@ -50,7 +50,7 @@ class TennisGame1:
         elif minus_result >= 2:
             result = f"Win for {self.player1_name}"
         else:
-            result = "Win for player2"
+            result = f"Win for {self.player2_name}"
         return result
 
     def _score_when_same_point(self):

@@ -49,6 +49,7 @@ test_cases = [
     (14, 16, 'Win for player2', 'player1', 'player2'),
 
     (4, 0, "Win for player3", 'player3', 'player2'),
+    (0, 4, "Win for player4", 'player3', 'player4'),
 ]
 
 
