@@ -44,9 +44,9 @@ class TennisGame1:
         # FIXME: deuce以外の時もあるため、名前が不適切である
         minus_result = self.p1points - self.p2points
         if minus_result == 1:
-            result = f"Advantage player1"
+            result = f"Advantage {self.player1_name}"
         elif minus_result == -1:
-            result = "Advantage player2"
+            result = f"Advantage {self.player2_name}"
         elif minus_result >= 2:
             result = f"Win for {self.player1_name}"
         else:
