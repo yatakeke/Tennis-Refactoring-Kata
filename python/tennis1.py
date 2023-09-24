@@ -24,7 +24,7 @@ class TennisGame1:
                 2: "Thirty-All",
             }.get(self.p1points, "Deuce")
         elif self.p1points >= 4 or self.p2points >= 4:
-            minus_result = self.p1points-self.p2points
+            minus_result = self.p1points - self.p2points
             if minus_result == 1:
                 result = "Advantage player1"
             elif minus_result == -1:
